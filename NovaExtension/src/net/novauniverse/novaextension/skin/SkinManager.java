@@ -15,8 +15,14 @@ import net.skinsrestorer.api.property.IProperty;
 import net.zeeraa.novacore.spigot.module.NovaModule;
 
 public class SkinManager extends NovaModule {
+	private static SkinManager instance;
+
 	private SkinsRestorerAPI skinsRestorerAPI;
 	private Map<String, IProperty> cache;
+
+	public static SkinManager getInstance() {
+		return instance;
+	}
 
 	@Override
 	public String getName() {
@@ -25,10 +31,11 @@ public class SkinManager extends NovaModule {
 
 	@Override
 	public void onLoad() {
+		SkinManager.instance = this;
 		cache = new HashMap<>();
 		skinsRestorerAPI = null;
 	}
-	
+
 	@Override
 	public void onDisable() throws Exception {
 		cache.clear();
@@ -43,14 +50,13 @@ public class SkinManager extends NovaModule {
 	private IProperty getSkinProperty(String url, @Nullable SkinType type) throws SkinRequestException {
 		String typeString = null;
 		String hash = null;
-		
-		if(type != null) {
+
+		if (type != null) {
 			typeString = type.getTypeName();
 			hash = DigestUtils.md5Hex(url) + "|" + typeString;
 		} else {
 			hash = DigestUtils.md5Hex(url);
 		}
-		
 
 		if (cache.containsKey(hash)) {
 			return cache.get(hash);
@@ -70,7 +76,7 @@ public class SkinManager extends NovaModule {
 	public void setSkin(Player player, String url) throws SkinRequestException {
 		this.setSkin(player, url, null);
 	}
-	
+
 	public void preloadSkin(String url, @Nullable SkinType type) throws SkinRequestException {
 		this.getSkinProperty(url, type);
 	}
