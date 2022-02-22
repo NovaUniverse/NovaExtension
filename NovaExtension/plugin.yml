@@ -1,0 +1,8 @@
+name: NovaExtension
+main: net.novauniverse.novaextension.NovaExtension
+description: Razer Sneki Snek FTW
+version: 1.0.0
+api-version: 1.13
+
+depend: [NovaCore]
+softdepend: [SkinsRestorer]

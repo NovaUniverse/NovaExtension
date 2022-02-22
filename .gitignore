@@ -1,0 +1,9 @@
+bin/
+target/
+*.jar
+test_server/
+buildtools
+javadoc/
+.idea
+
+dependency-reduced-pom.xml
