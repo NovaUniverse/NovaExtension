@@ -24,9 +24,8 @@ public class SkinManager extends NovaModule {
 		return instance;
 	}
 
-	@Override
-	public String getName() {
-		return "novaextension.skinmanager";
+	public SkinManager() {
+		super("NovaExtension.SkinManager");
 	}
 
 	@Override

@@ -66,7 +66,7 @@ public class NovaExtension extends JavaPlugin implements Listener {
 
 		if (Bukkit.getServer().getPluginManager().getPlugin("SkinsRestorer") != null) {
 			Log.info("NovaExtension", "Found SkinsRestorer. Enabling SkinManager");
-			ModuleManager.loadModule(SkinManager.class, true);
+			ModuleManager.loadModule(this, SkinManager.class, true);
 		}
 
 		Bukkit.getServer().getPluginManager().registerEvents(this, this);
