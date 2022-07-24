@@ -34,8 +34,6 @@
 	
 	<modules>
 		<module>NovaExtension</module>
-		<module>NovaExtension-Abstraction</module>
-		<module>NovaExtenstion-v1_16_R3</module>
 	</modules>
 
 	<repositories>
