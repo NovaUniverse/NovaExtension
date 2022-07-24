@@ -9,6 +9,7 @@ import org.apache.commons.codec.digest.DigestUtils;
 import org.bukkit.entity.Player;
 
 import net.skinsrestorer.api.PlayerWrapper;
+import net.skinsrestorer.api.SkinVariant;
 import net.skinsrestorer.api.SkinsRestorerAPI;
 import net.skinsrestorer.api.exception.SkinRequestException;
 import net.skinsrestorer.api.property.IProperty;
@@ -48,11 +49,13 @@ public class SkinManager extends NovaModule {
 
 	private IProperty getSkinProperty(String url, @Nullable SkinType type) throws SkinRequestException {
 		String typeString = null;
+		SkinVariant variant = null;
 		String hash = null;
 
 		if (type != null) {
 			typeString = type.getTypeName();
 			hash = DigestUtils.md5Hex(url) + "|" + typeString;
+			variant = type.toVariant();
 		} else {
 			hash = DigestUtils.md5Hex(url);
 		}
@@ -60,7 +63,7 @@ public class SkinManager extends NovaModule {
 		if (cache.containsKey(hash)) {
 			return cache.get(hash);
 		} else {
-			IProperty prop = skinsRestorerAPI.genSkinUrl(url, typeString);
+			IProperty prop = skinsRestorerAPI.genSkinUrl(url, variant);
 
 			cache.put(hash, prop);
 
