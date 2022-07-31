@@ -100,13 +100,8 @@
 
 	<repositories>
 		<repository>
-			<id>spigot-repo</id>
-			<url>https://hub.spigotmc.org/nexus/content/repositories/snapshots/</url>
-		</repository>
-
-		<repository>
-			<id>zeeraas-repo</id>
-			<url>https://nexus.zeeraa.net/repository/maven-group/</url>
+			<id>novauniverse2</id>
+			<url>https://nexus2.novauniverse.net/repository/novauniverse/</url>
 		</repository>
 
 		<repository>
@@ -118,15 +113,10 @@
 			<id>codemc-releases</id>
 			<url>https://repo.codemc.org/repository/maven-releases/</url>
 		</repository>
-		
+
 		<repository>
 			<id>codemc-snapshots</id>
 			<url>https://repo.codemc.org/repository/maven-snapshots/</url>
-		</repository>
-
-		<repository>
-			<id>novauniverse-group</id>
-			<url>https://nexus.novauniverse.net/repository/novauniverse-group/</url>
 		</repository>
 	</repositories>
 
