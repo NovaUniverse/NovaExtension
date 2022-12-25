@@ -164,11 +164,10 @@
 			<scope>compile</scope>
 		</dependency>
 
-		<!-- SkinsRestorer API -->
 		<dependency>
 			<groupId>net.skinsrestorer</groupId>
 			<artifactId>skinsrestorer-api</artifactId>
-			<version>14.2.2-SNAPSHOT</version>
+			<version>14.2.4</version>
 			<scope>provided</scope>
 		</dependency>
 	</dependencies>
